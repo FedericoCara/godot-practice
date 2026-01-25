@@ -1,0 +1,30 @@
+# Godot-specific
+.godot/
+
+# Import files
+.import/
+*.import
+
+# Exported builds
+export/
+export_presets.cfg
+
+# Mono / C# (si usás Godot .NET)
+.mono/
+*.csproj
+*.sln
+*.user
+*.userprefs
+
+# Logs and crash reports
+*.log
+crash_report.*
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*~
+*.bak
