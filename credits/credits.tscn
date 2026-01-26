@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dcqi1ng6mn6wq"]
+[gd_scene load_steps=2 format=3 uid="uid://dcqi1ng6mn6wq"]
+
+[ext_resource type="Script" uid="uid://dy3orhtpvtqgm" path="res://credits/credits.gd" id="1_5uwby"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -7,6 +9,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5uwby")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.5681271, 0.47105533, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -27,7 +39,7 @@ Pepe Mandiola"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -41,7 +53,7 @@ offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="ReturnButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,3 +65,5 @@ text = "Go back"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

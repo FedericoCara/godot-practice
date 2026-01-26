@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cr387n6yark08"]
+[gd_scene load_steps=2 format=3 uid="uid://cr387n6yark08"]
+
+[ext_resource type="Script" uid="uid://wdv8bkvvyfq0" path="res://home_menu/home_menu.gd" id="1_jyxve"]
 
 [node name="HomeMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jyxve")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -17,14 +20,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.5681271, 0.47105533, 1)
 
-[node name="Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 497.0
 offset_top = 463.0
 offset_right = 693.0
 offset_bottom = 522.0
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="StartButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,14 +45,14 @@ text = "Start"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="."]
+[node name="CreditsButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 498.0
 offset_top = 540.0
 offset_right = 694.0
 offset_bottom = 599.0
 
-[node name="Label" type="Label" parent="Button2"]
+[node name="Label" type="Label" parent="CreditsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,3 +80,5 @@ theme_override_font_sizes/font_size = 70
 text = "Mi jogo"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
