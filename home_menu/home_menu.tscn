@@ -81,4 +81,5 @@ text = "Mi jogo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]

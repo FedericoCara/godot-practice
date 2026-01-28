@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4jf04cananr"]
+
+[ext_resource type="Texture2D" uid="uid://dyvnrhwvau25l" path="res://assets/background.png" id="1_l1rk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vasa2"]
+size = Vector2(1194, 20)
+
+[node name="Game" type="Node"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(577, 645)
+shape = SubResource("RectangleShape2D_vasa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1rk1")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
