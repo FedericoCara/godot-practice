@@ -1,15 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://co4jf04cananr"]
+[gd_scene load_steps=11 format=3 uid="uid://co4jf04cananr"]
 
 [ext_resource type="Texture2D" uid="uid://dyvnrhwvau25l" path="res://assets/background.png" id="1_l1rk1"]
-[ext_resource type="Texture2D" uid="uid://12ex2oki561b" path="res://assets/ui/jump_normal.tres" id="2_u5opy"]
-[ext_resource type="Texture2D" uid="uid://cle0vt3wdj6j5" path="res://assets/ui/jump_pressed.tres" id="3_y36n6"]
-[ext_resource type="Texture2D" uid="uid://cyk4swhqos57t" path="res://assets/ui/kick_normal.tres" id="5_j8tme"]
-[ext_resource type="Texture2D" uid="uid://ol7fdfqithek" path="res://assets/ui/puch_normal.tres" id="6_3vho3"]
-[ext_resource type="Texture2D" uid="uid://1lsqpc0mweyv" path="res://assets/ui/puch_pressed.tres" id="7_qf6n1"]
-[ext_resource type="PackedScene" uid="uid://clj4bfcni8qlb" path="res://UI/joystick.tscn" id="8_y36n6"]
+[ext_resource type="PackedScene" uid="uid://3ypt10ksup0s" path="res://UI/ui.tscn" id="2_vasa2"]
+[ext_resource type="PackedScene" uid="uid://b14k8epe5xeon" path="res://level/floor.tscn" id="3_y36n6"]
+[ext_resource type="Texture2D" uid="uid://vf16ye2cnlvv" path="res://Captura de pantalla 2026-01-30 004222.png" id="4_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://di6hdud4s8c5i" path="res://level/floor_2.tscn" id="4_l8g03"]
+[ext_resource type="PackedScene" uid="uid://dwdy8vly1k3iu" path="res://level/floor_3.tscn" id="5_j8tme"]
+[ext_resource type="PackedScene" uid="uid://dxdha827w7mwb" path="res://level/floor_4.tscn" id="6_3vho3"]
+[ext_resource type="PackedScene" uid="uid://bk7ise8mcfvye" path="res://level/floor_main.tscn" id="7_qf6n1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vasa2"]
 size = Vector2(1194, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y36n6"]
+size = Vector2(40, 40)
 
 [node name="Game" type="Node"]
 
@@ -23,32 +27,75 @@ shape = SubResource("RectangleShape2D_vasa2")
 texture = ExtResource("1_l1rk1")
 centered = false
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="UI" parent="." instance=ExtResource("2_vasa2")]
+metadata/_edit_lock_ = true
+
+[node name="TouchScreenButton" parent="UI" index="0"]
+position = Vector2(376, 550)
+
+[node name="TouchScreenButton2" parent="UI" index="1"]
+position = Vector2(333, 639)
+
+[node name="TouchScreenButton3" parent="UI" index="2"]
+position = Vector2(292, 577)
+
+[node name="joystick" parent="UI" index="3"]
+offset_left = 23.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = -23.0
+
+[node name="Base" parent="UI/joystick" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
 grow_horizontal = 2
-grow_vertical = 2
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="UI"]
-position = Vector2(378, 552)
-texture_normal = ExtResource("2_u5opy")
-texture_pressed = ExtResource("3_y36n6")
+[node name="Tip" parent="UI/joystick/Base" index="0"]
+offset_left = -38.0
+offset_top = -38.0
+offset_right = 38.0
+offset_bottom = 38.0
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="UI"]
-position = Vector2(333, 641)
-texture_normal = ExtResource("5_j8tme")
-texture_pressed = ExtResource("5_j8tme")
+[node name="Floor" parent="." instance=ExtResource("3_y36n6")]
+position = Vector2(435, 257)
 
-[node name="TouchScreenButton3" type="TouchScreenButton" parent="UI"]
-position = Vector2(284, 578)
-texture_normal = ExtResource("6_3vho3")
-texture_pressed = ExtResource("7_qf6n1")
+[node name="Floor2" parent="." instance=ExtResource("4_l8g03")]
+position = Vector2(408, 386)
 
-[node name="joystick" parent="UI" instance=ExtResource("8_y36n6")]
-layout_mode = 1
-offset_left = 39.0
-offset_top = -153.0
-offset_right = 167.0
-offset_bottom = -25.0
+[node name="Floor3" parent="." instance=ExtResource("5_j8tme")]
+position = Vector2(87, 367)
+
+[node name="Floor4" parent="." instance=ExtResource("6_3vho3")]
+position = Vector2(62, 227)
+
+[node name="FloorMain" parent="." instance=ExtResource("7_qf6n1")]
+position = Vector2(242, 517)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(242, 292)
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_y36n6")
+
+[node name="CapturaDePantalla20260130004222" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.6117647)
+position = Vector2(239, 359)
+scale = Vector2(0.8987838, 0.8987838)
+texture = ExtResource("4_dxrkv")
+metadata/_edit_lock_ = true
+
+[editable path="UI"]
+[editable path="UI/joystick"]

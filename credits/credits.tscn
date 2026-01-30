@@ -34,8 +34,13 @@ offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Federico Cara
-Pepe Mandiola"
+text = "Adán Gabiola
+Federico Cara
+Fernando Rodriguez Catón
+Florencia Giomi
+Germán Moltó
+Martín Gerónimo González
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

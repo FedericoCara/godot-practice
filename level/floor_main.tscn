@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk7ise8mcfvye"]
+
+[ext_resource type="Texture2D" uid="uid://cy4cvopdup7i4" path="res://assets/level/suelo480x30.png" id="1_hpb63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8jr3"]
+size = Vector2(480, 28)
+
+[node name="FloorMain" type="StaticBody2D"]
+
+[node name="Suelo90x30" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+texture = ExtResource("1_hpb63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_d8jr3")

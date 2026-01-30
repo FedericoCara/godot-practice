@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://3ypt10ksup0s"]
+[gd_scene load_steps=8 format=3 uid="uid://3ypt10ksup0s"]
 
 [ext_resource type="Texture2D" uid="uid://12ex2oki561b" path="res://assets/ui/jump_normal.tres" id="1_nm1m0"]
 [ext_resource type="Texture2D" uid="uid://cle0vt3wdj6j5" path="res://assets/ui/jump_pressed.tres" id="2_c7tqi"]
 [ext_resource type="Texture2D" uid="uid://cyk4swhqos57t" path="res://assets/ui/kick_normal.tres" id="3_cbfhl"]
 [ext_resource type="Texture2D" uid="uid://ol7fdfqithek" path="res://assets/ui/puch_normal.tres" id="4_4fiuh"]
+[ext_resource type="Texture2D" uid="uid://b8wexuinkra3i" path="res://assets/ui/kick_pressed.tres" id="4_c7tqi"]
 [ext_resource type="Texture2D" uid="uid://1lsqpc0mweyv" path="res://assets/ui/puch_pressed.tres" id="5_h81ot"]
 [ext_resource type="PackedScene" uid="uid://clj4bfcni8qlb" path="res://UI/joystick.tscn" id="6_6rr40"]
 
@@ -23,7 +24,7 @@ texture_pressed = ExtResource("2_c7tqi")
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
 position = Vector2(333, 641)
 texture_normal = ExtResource("3_cbfhl")
-texture_pressed = ExtResource("3_cbfhl")
+texture_pressed = ExtResource("4_c7tqi")
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
 position = Vector2(284, 578)
@@ -32,7 +33,3 @@ texture_pressed = ExtResource("5_h81ot")
 
 [node name="joystick" parent="." instance=ExtResource("6_6rr40")]
 layout_mode = 1
-offset_left = 39.0
-offset_top = -153.0
-offset_right = 167.0
-offset_bottom = -25.0
