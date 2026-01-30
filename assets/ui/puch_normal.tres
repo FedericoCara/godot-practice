@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ol7fdfqithek"]
+
+[ext_resource type="Texture2D" uid="uid://dsg6q6qfkrg82" path="res://assets/ui/trompada.png" id="1_xr3nt"]
+
+[resource]
+atlas = ExtResource("1_xr3nt")
+region = Rect2(64, 0, 64, 64)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cle0vt3wdj6j5"]
+
+[ext_resource type="Texture2D" uid="uid://fqi3jlmk1xvx" path="res://assets/ui/saltar.png" id="1_80g48"]
+
+[resource]
+atlas = ExtResource("1_80g48")
+region = Rect2(0, 0, 96, 96)

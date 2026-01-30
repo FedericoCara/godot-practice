@@ -1,6 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://co4jf04cananr"]
+[gd_scene load_steps=9 format=3 uid="uid://co4jf04cananr"]
 
 [ext_resource type="Texture2D" uid="uid://dyvnrhwvau25l" path="res://assets/background.png" id="1_l1rk1"]
+[ext_resource type="Texture2D" uid="uid://12ex2oki561b" path="res://assets/ui/jump_normal.tres" id="2_u5opy"]
+[ext_resource type="Texture2D" uid="uid://cle0vt3wdj6j5" path="res://assets/ui/jump_pressed.tres" id="3_y36n6"]
+[ext_resource type="Texture2D" uid="uid://cyk4swhqos57t" path="res://assets/ui/kick_normal.tres" id="5_j8tme"]
+[ext_resource type="Texture2D" uid="uid://ol7fdfqithek" path="res://assets/ui/puch_normal.tres" id="6_3vho3"]
+[ext_resource type="Texture2D" uid="uid://1lsqpc0mweyv" path="res://assets/ui/puch_pressed.tres" id="7_qf6n1"]
+[ext_resource type="PackedScene" uid="uid://clj4bfcni8qlb" path="res://UI/joystick.tscn" id="8_y36n6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vasa2"]
 size = Vector2(1194, 20)
@@ -17,11 +23,32 @@ shape = SubResource("RectangleShape2D_vasa2")
 texture = ExtResource("1_l1rk1")
 centered = false
 
-[node name="Control" type="Control" parent="."]
-visible = false
+[node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="UI"]
+position = Vector2(378, 552)
+texture_normal = ExtResource("2_u5opy")
+texture_pressed = ExtResource("3_y36n6")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="UI"]
+position = Vector2(333, 641)
+texture_normal = ExtResource("5_j8tme")
+texture_pressed = ExtResource("5_j8tme")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="UI"]
+position = Vector2(284, 578)
+texture_normal = ExtResource("6_3vho3")
+texture_pressed = ExtResource("7_qf6n1")
+
+[node name="joystick" parent="UI" instance=ExtResource("8_y36n6")]
+layout_mode = 1
+offset_left = 39.0
+offset_top = -153.0
+offset_right = 167.0
+offset_bottom = -25.0
